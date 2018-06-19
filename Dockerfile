@@ -1,6 +1,7 @@
 FROM ruby:2.5.1
 
-RUN gem install execjs
-RUN gem install therubyracer
-RUN gem 'rake'
-RUN gem 'html-proofer'
+# added therubyracer to use jekyll-minifier
+RUN gem install execjs therubyracer
+
+# Following 2 gems are used for searching broken links
+RUN gem install rake html-proofer
