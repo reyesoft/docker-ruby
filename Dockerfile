@@ -5,7 +5,7 @@ RUN apt-get clean && apt-get update
 RUN apt-get install locales --assume-yes
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
+ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 RUN apt-get update && apt-get -qq install lftp
