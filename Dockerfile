@@ -11,7 +11,7 @@ ENV LC_ALL en_US.UTF-8
 RUN apt-get update && apt-get -qq install lftp
 
 # added therubyracer to use jekyll-minifier
-RUN gem install execjs therubyracer
+RUN gem install execjs therubyracer nokogiri
 
 # Following 2 gems are used for searching broken links
 RUN gem install rake html-proofer
