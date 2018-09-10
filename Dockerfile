@@ -8,8 +8,6 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-
 RUN apt-get update -yq \
     && apt-get -qq install lftp \
     && apt-get install curl gnupg -yq \
