@@ -19,6 +19,3 @@ RUN gem install execjs therubyracer nokogiri
 
 # Following 2 gems are used for searching broken links
 RUN gem install rake html-proofer
-
-RUN nodejs --version
-RUN npm --version
