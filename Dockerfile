@@ -8,7 +8,12 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN apt-get update && apt-get -qq install lftp
+RUN apt-get update -yq \
+    && apt-get -qq install lftp \
+    && apt-get install curl gnupg -yq \
+    && curl -sL https://deb.nodesource.com/setup_8.x | bash \
+    && apt-get install nodejs -yq \
+    && npm install -g yarn 
 
 # added therubyracer to use jekyll-minifier
 RUN gem install execjs therubyracer nokogiri
