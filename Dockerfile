@@ -12,7 +12,8 @@ RUN apt-get update -yq \
     && apt-get -qq install lftp \
     && apt-get install curl gnupg -yq \
     && curl -sL https://deb.nodesource.com/setup_8.x | bash \
-    && apt-get install nodejs -yq
+    && apt-get install nodejs -yq \
+    && npm install -g yarn 
 
 # added therubyracer to use jekyll-minifier
 RUN gem install execjs therubyracer nokogiri
