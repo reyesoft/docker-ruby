@@ -1,4 +1,4 @@
-FROM ruby:2.5.1
+FROM ruby:2.6.3
 
 RUN echo en_US UTF-8 >> /etc/locale.gen
 RUN apt-get clean && apt-get update
@@ -12,11 +12,15 @@ RUN apt-get update -yq \
     && apt-get -qq install lftp \
     && apt-get install curl gnupg -yq \
     && curl -sL https://deb.nodesource.com/setup_8.x | bash \
-    && apt-get install nodejs -yq \
+    && apt-get install nodejs npm -yq \
     && npm install -g yarn 
+
+RUN gem update --system
 
 # added therubyracer to use jekyll-minifier
 RUN gem install execjs therubyracer nokogiri
 
 # Following 2 gems are used for searching broken links
 RUN gem install rake html-proofer
+
+RUN gem install bundler
